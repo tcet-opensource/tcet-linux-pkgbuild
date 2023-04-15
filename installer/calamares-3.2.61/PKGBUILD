@@ -2,7 +2,7 @@
 
 pkgname=calamares
 pkgver=3.2.61
-pkgrel=7
+pkgrel=8
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -26,7 +26,7 @@ prepare() {
 	sed -i -e 's/# DEBUG_FILESYSTEMS/DEBUG_FILESYSTEMS/' "$srcdir/${pkgname}-${pkgver}/CMakeLists.txt"
 
 	# modify desktop file
-	sed -i -e 's#Exec=sh.*#Exec=sh -c "/etc/calamares/launch.sh"#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
+	sed -i -e 's#Exec=sh.*#Exec=sh -c "sudo -E calamares"#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
 	sed -i -e 's#Name=.*#Name=Install TCET Linux#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
 	sed -i -e 's#GenericName=.*#GenericName=TCET Linux Installer#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
 	sed -i -e 's#Icon=.*#Icon=tcetlinux-logo#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
