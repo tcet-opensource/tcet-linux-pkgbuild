@@ -1,4 +1,4 @@
-#calamares PKGBUILD for TCET Linux
+#calamares PKGBUILD for TCET Linux Installer
 
 pkgname=calamares
 pkgver=3.2.61
