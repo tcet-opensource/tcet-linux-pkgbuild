@@ -1,0 +1,28 @@
+# Maintainer: DemonKiller
+pkgname=tcet-linux-settings
+destname="/etc"
+pkgver=23.04
+pkgrel=1
+pkgdesc="Settings for TCET Linux"
+arch=('x86_64')
+url="https://github.com/tcet-opensource"
+license=('GPL3')
+makedepends=('git')
+
+depends=('xfce4-terminal' 'thunar' 'firefox' 'xfce4-whiskermenu-plugin' 'tela-circle-icon' 'qogir-gtk-theme-git')
+
+optdepends=('paru: an AUR helper'
+            'neofetch: screenfetch utility'
+            'cups: printing support'
+            'system-config-printer: CUPS status applet'
+            'blueman: bluetooth manager')
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+${url}/${pkgname}")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${destname}
+	cp -r ${srcdir}/${pkgname}${destname}/* ${pkgdir}${destname}
+}
