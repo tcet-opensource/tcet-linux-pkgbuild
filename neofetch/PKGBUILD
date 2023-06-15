@@ -1,0 +1,22 @@
+# Maintainer: Akash6222
+# Project: TCET Linux
+pkgname=neofetch-tcet
+_pkgname=neofetch
+pkgver=7.1.0
+pkgrel=1
+pkgdesc="A CLI system information tool written in BASH that supports displaying images."
+arch=('any')
+url="https://github.com/Akash6222/neofetch"
+license=('MIT')
+provides=($_pkgname)
+conflicts=($_pkgname)
+depends=('bash')
+makedepends=('git')
+source=("$pkgname::git+https://github.com/Akash6222/neofetch.git")
+md5sums=('SKIP')
+
+package() {
+  cd $pkgname
+  make DESTDIR="$pkgdir" install
+  install -D -m644 LICENSE.md "$pkgdir/usr/share/licenses/neofetch/LICENSE.md"
+}
