@@ -12,7 +12,7 @@ groups=(plasma)
 source=("git+${url}")
 sha256sums=('SKIP')
 build() {
-  cmake -B build -S tcet-linux-apps/$pkgname \
+  cmake -B build -S src/tcet-linux-apps/$pkgname \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
