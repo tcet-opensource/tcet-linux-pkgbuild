@@ -1,7 +1,3 @@
-# Maintainer: Mark Wagie <mark dot wagie at tutanota dot com>
-# Maintainer: FirstAirBender <noblechuk5[at]web[dot]de>
-# Contributor: Bitts311 <oceanmail311@gmail.com>
-
 _pkgname=Qogir-theme
 _pkgver=2023-05-24
 pkgname="qogir-gtk-theme"
@@ -9,7 +5,7 @@ pkgver=${_pkgver//-/.}
 pkgrel=1
 pkgdesc="Qogir is a flat Design theme for GTK"
 arch=('any')
-url="https://github.com/vinceliuice/Qogir-theme"
+url="https://github.com/Akash6222/Qogir-Theme"
 license=('GPL3')
 makedepends=('grep' 'sassc')
 optdepends=(
@@ -20,7 +16,7 @@ optdepends=(
     'vimix-cursors: Matching cursor theme'
     'tela-icon-theme: Recommended icon theme'
 )
-backup=(etc/qogir-gtk-theme/options.txt)
+
 install="${pkgname}.install"
 options=('!strip')
 source=(
