@@ -1,7 +1,7 @@
 # Maintainer: Francois Menning <f.menning@pm.me>
 
-pkgname=qogir-gtk-theme-git
-pkgver=2022.10.16.r15.g5f0d167
+pkgname=tcet-linux-qogir-theme
+pkgver=2023.05.24
 pkgrel=1
 pkgdesc='Qogir is a flat Design theme for GTK'
 arch=('any')
@@ -18,7 +18,7 @@ source=('git+https://github.com/tcet-opensource/tcet-linux-qogir-theme.git')
 sha256sums=('SKIP')
 
 package() {
-  cd Qogir-Theme
+  cd tcet-linux-qogir-theme
 
   install -dm755 "${pkgdir}/usr/share/themes"
   
