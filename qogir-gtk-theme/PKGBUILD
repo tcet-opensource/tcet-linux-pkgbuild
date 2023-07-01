@@ -1,35 +1,31 @@
-_pkgname=Qogir-Theme
-_pkgver=2023-05-24
-pkgname="qogir-gtk-theme"
-pkgver=${_pkgver//-/.}
-pkgrel=1
-pkgdesc="Qogir is a flat Design theme for GTK"
-arch=('any')
-url="https://github.com/Akash6222/Qogir-Theme"
-license=('GPL3')
-makedepends=('grep' 'sassc')
-optdepends=(
-    'qogir-icon-theme: Matching icon theme'
-    'vimix-cursors: Matching cursor theme'
-    'tela-icon-theme: Recommended icon theme'
-)
+# Maintainer: Francois Menning <f.menning@pm.me>
 
-install="${pkgname}.install"
-options=('!strip')
-source=("git+${url}")
+pkgname=qogir-gtk-theme-git
+pkgver=2022.10.16.r15.g5f0d167
+pkgrel=1
+pkgdesc='Qogir is a flat Design theme for GTK'
+arch=('any')
+url='https://github.com/Akash6222/Qogir-Theme'
+license=('GPL3')
+depends=('gtk3' 'gtk4' 'gtk-engine-murrine' 'gtk-engines')
+makedepends=('git' 'sassc')
+optdepends=(
+  'qogir-icon-theme: Matching icon theme'
+)
+provides=('qogir-gtk-theme')
+conflicts=('qogir-gtk-theme')
+source=('git+https://github.com/Akash6222/Qogir-Theme')
 sha256sums=('SKIP')
 
 package() {
-    INSTALL_OPTS="$(/usr/bin/grep \
-        --extended-regexp \
-        --max-count=1 \
-        --line-regexp \
-        --no-messages \
-        --invert-match '^\s*$|#.+' \
-        "/${backup[0]}" || echo -n '--theme all --tweaks image square round --icon arch')"
+  cd Qogir-Theme
 
-    install -dm755 "$pkgdir/usr/share/themes"
-    cd "$_pkgname"
-    ./install.sh ${INSTALL_OPTS//--logo/--icon} --dest "$pkgdir/usr/share/themes"
-    install -D ./install.sh -t "$pkgdir/usr/bin/${pkgname}/"
+  install -dm755 "${pkgdir}/usr/share/themes"
+  
+  ./install.sh \
+    --dest "${pkgdir}/usr/share/themes" \
+    --theme all \
+    --icon arch \
+    --libadwaita \
+    --tweaks image
 }
