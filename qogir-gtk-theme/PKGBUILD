@@ -5,7 +5,7 @@ pkgver=2022.10.16.r15.g5f0d167
 pkgrel=1
 pkgdesc='Qogir is a flat Design theme for GTK'
 arch=('any')
-url='https://github.com/Akash6222/Qogir-Theme'
+url='https://github.com/tcet-opensource/tcet-linux-qogir-theme'
 license=('GPL3')
 depends=('gtk3' 'gtk4' 'gtk-engine-murrine' 'gtk-engines')
 makedepends=('git' 'sassc')
@@ -14,7 +14,7 @@ optdepends=(
 )
 provides=('qogir-gtk-theme')
 conflicts=('qogir-gtk-theme')
-source=('git+https://github.com/Akash6222/Qogir-Theme')
+source=('git+https://github.com/tcet-opensource/tcet-linux-qogir-theme.git')
 sha256sums=('SKIP')
 
 package() {
