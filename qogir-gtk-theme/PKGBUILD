@@ -24,8 +24,6 @@ package() {
   
   ./install.sh \
     --dest "${pkgdir}/usr/share/themes" \
-    --theme all \
     --icon arch \
-    --libadwaita \
-    --tweaks image
+    --libadwaita 
 }
