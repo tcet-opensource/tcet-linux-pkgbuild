@@ -1,0 +1,37 @@
+# Maintainer: DemonKiller
+pkgname=tcet-linux-welcome
+destname="/etc/skel/.local/share/tcet-welcome"
+app="/usr/share/applications"
+repodest="/tcet-welcome"
+autostart="/etc/skel/.config/autostart"
+binary="/usr/bin"
+pkgver=23.07
+pkgrel=3
+pkgdesc="Welcome App for TCET Linux"
+arch=('x86_64')
+url="https://github.com/tcet-opensource/tcet-linux-welcome"
+license=('GPL3')
+makedepends=('git')
+
+depends=('yad')
+
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+${url}#branch=4-create-welcome-app-based-on-yad")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${destname}/
+	cp -r ${srcdir}/${pkgname}${repodest}/* ${pkgdir}${destname}/
+
+    install -dm755 ${pkgdir}${app}/
+    cp -r ${srcdir}/${pkgname}/tcet-welcome.desktop ${pkgdir}${app}/
+
+    install -dm755 ${pkgdir}${autostart}/
+    cp -r ${srcdir}/${pkgname}/tcet-welcome.desktop ${pkgdir}${autostart}/
+   
+    install -dm755 ${pkgdir}${binary}/
+    cp -r ${srcdir}/${pkgname}/welcome ${pkgdir}${binary}/
+
+}
