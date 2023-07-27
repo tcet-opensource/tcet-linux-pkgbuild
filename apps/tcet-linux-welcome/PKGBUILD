@@ -1,4 +1,6 @@
-# Maintainer: DemonKiller
+# Maintainer: Akash6222
+# Project: TCET Linux
+
 pkgname=tcet-linux-welcome
 destname="/etc/skel/.local/share/tcet-welcome"
 app="/usr/share/applications"
