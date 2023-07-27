@@ -1,4 +1,6 @@
 # Maintainer: DemonKiller
+# Project: TCET Linux
+
 pkgname=tcet-linux-settings
 destname="/etc"
 pkgver=23.04
