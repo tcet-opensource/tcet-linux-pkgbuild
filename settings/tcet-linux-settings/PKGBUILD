@@ -4,7 +4,7 @@
 pkgname=tcet-linux-settings
 destname="/etc"
 pkgver=23.04
-pkgrel=13
+pkgrel=16
 pkgdesc="Settings for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource"
