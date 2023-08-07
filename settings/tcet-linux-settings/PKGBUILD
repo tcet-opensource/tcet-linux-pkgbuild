@@ -4,10 +4,10 @@
 pkgname=tcet-linux-settings
 destname="/etc"
 pkgver=23.08
-pkgrel=1
+pkgrel=2
 pkgdesc="Settings for TCET Linux"
 arch=('x86_64')
-url="https://github.com/tcet-opensource"
+url="https://github.com/tcet-opensource/tcet-linux-settings"
 license=('GPL3')
 makedepends=('git')
 
@@ -21,7 +21,7 @@ optdepends=('paru: an AUR helper'
 conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=(${pkgname}::"git+${url}/${pkgname}")
+source=(${pkgname}::"git+${url}")
 sha256sums=('SKIP')
 
 package() {
