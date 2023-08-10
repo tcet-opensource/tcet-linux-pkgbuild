@@ -2,7 +2,7 @@
 
 pkgname=calamares
 pkgver=3.2.62
-pkgrel=3
+pkgrel=5
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -64,5 +64,5 @@ build() {
 package() {
 	cd ${srcdir}/calamares-${pkgver}/build
 	make DESTDIR="$pkgdir" install
-	
+
 }
