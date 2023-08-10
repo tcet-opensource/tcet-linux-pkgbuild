@@ -1,7 +1,7 @@
 # Maintainer: Akash6222
 # Project: TCET Linux
 
-pkgname=task-manager
+pkgname=tcet-linux-task-manager
 pkgver=23.08
 pkgrel=1
 pkgdesc="Task Manager for TCET Linux"
@@ -15,10 +15,14 @@ options=(!strip !emptydirs)
 source=(${pkgname}::"git+${url}")
 sha256sums=('SKIP')
 destname="/usr/share/applications/"
+destname1="/usr/share/icons/"
 
 package() {
 
     install -dm755 ${pkgdir}${destname}/
-    cp -r ${srcdir}/${pkgname}/task-manager.desktop ${pkgdir}${destname}/
+    cp -r ${srcdir}/${pkgname}/applications/task-manager.desktop ${pkgdir}${destname}/
+    
+    install -dm755 ${pkgdir}${destname1}/
+    cp -r ${srcdir}/${pkgname}/icons/task-manager.svg ${pkgdir}${destname1}/
 
 }

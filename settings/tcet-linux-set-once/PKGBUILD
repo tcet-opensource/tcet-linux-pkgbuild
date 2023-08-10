@@ -1,0 +1,23 @@
+# Maintainer: Akash6222
+# Project: TCET Linux
+
+pkgname=tcet-linux-set-once
+pkgver=23.08
+pkgrel=1
+pkgdesc="Set Once for TCET Linux"
+arch=('x86_64')
+url="https://github.com/tcet-opensource/tcet-linux-set-once"
+license=('GPL3')
+
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+${url}")
+sha256sums=('SKIP')
+
+package() {
+
+    install -dm755 ${pkgdir}/
+    cp -r ${srcdir}/${pkgname}/* ${pkgdir}/
+
+}
