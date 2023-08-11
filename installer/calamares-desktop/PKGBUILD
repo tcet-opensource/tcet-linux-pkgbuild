@@ -1,0 +1,25 @@
+# Maintainer: Akash6222
+# Project: TCET Linux
+
+pkgname=calamares-desktop
+destname="/etc/skel/Desktop/"
+pkgver=23.08
+pkgrel=3
+pkgdesc="Calamares Desktop"
+arch=('x86_64')
+url="https://github.com/Akash6222/calamares_desktop"
+license=('GPL3')
+makedepends=('git')
+
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+${url}")
+sha256sums=('SKIP')
+
+package() {
+
+    install -dm755 ${pkgdir}${destname}/
+    cp -r ${srcdir}/${pkgname}/calamares.desktop ${pkgdir}${destname}/
+
+}
