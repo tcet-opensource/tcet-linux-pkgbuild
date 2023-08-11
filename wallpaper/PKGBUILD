@@ -1,0 +1,25 @@
+# Maintainer: Akash6222
+# Project: TCET Linux
+
+pkgname=tcet-linux-wallpaper
+pkgver=23.08
+pkgrel=1
+pkgdesc="Wallpaper for TCET Linux"
+arch=('x86_64')
+url="https://github.com/tcet-opensource/tcet-linux-wallpaper"
+license=('GPL3')
+
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+${url}")
+sha256sums=('SKIP')
+
+destname="/usr/share/backgrounds/xfce/"
+
+package() {
+
+    install -dm755 ${pkgdir}${destname}/
+    cp -r ${srcdir}/${pkgname}/* ${pkgdir}/${destname}/
+
+}
