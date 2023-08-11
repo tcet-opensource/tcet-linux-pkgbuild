@@ -3,7 +3,7 @@
 
 pkgname=tcet-linux-task-manager
 pkgver=23.08
-pkgrel=1
+pkgrel=2
 pkgdesc="Task Manager for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-task-manager"
@@ -16,6 +16,7 @@ source=(${pkgname}::"git+${url}")
 sha256sums=('SKIP')
 destname="/usr/share/applications/"
 destname1="/usr/share/icons/"
+destname2="/usr/bin"
 
 package() {
 
@@ -24,5 +25,8 @@ package() {
     
     install -dm755 ${pkgdir}${destname1}/
     cp -r ${srcdir}/${pkgname}/icons/task-manager.svg ${pkgdir}${destname1}/
+
+    install -dm755 ${pkgdir}${destname2}/
+    cp -r ${srcdir}/${pkgname}/${destname2}/task-manager ${pkgdir}${destname2}/
 
 }
