@@ -19,7 +19,7 @@ These PKGBUILD files are used to generate ***.zst*** files which can be uploaded
 ```bash
 git clone https://github.com/tcet-opensource/tcet-linux-pkgbuild.git
 ```
-#### 2. change into the required application's directory and run:
+#### 2. change into the required application's directory and run
 ```bash
 makepkg -s
 ```
@@ -32,7 +32,7 @@ We host a [main package repository](https://github.com/tcet-opensource/tcet-linu
 
 we are currently trying to automate this process by writing a bash script for the steps above :
 
-[TCET Linux Automation scripts](https://github.com/tcet-opensource/tcet-linux-automation-scripts)
+[TCET Linux Automation Scripts](https://github.com/tcet-opensource/tcet-linux-automation-scripts)
 
 ## Important Links
 
