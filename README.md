@@ -6,7 +6,7 @@
 
 ## Usage
 
-These PKGBUILD files are used to generate ***.zst*** files which can be uploaded to our [package repository](https://github.com/tcet-opensource/tcet-linux-repo) which make the updated version of the package available to all TCET Linux users.
+These PKGBUILD files are used to generate ***.zst*** files which can be uploaded to our [package repository](https://github.com/tcet-opensource/tcet-linux-repo) which makes the updated version of the package available to all TCET Linux users.
 
 ## Instructions to create a package:
 
@@ -24,6 +24,18 @@ git clone https://github.com/tcet-opensource/tcet-linux-pkgbuild.git
 makepkg -s
 ```
 this will generate a **package_name.tar.zst** file
-#### 3. upload the package to the package respository
+#### 3. upload the package to the package repository
 
-We host a [main package repository](https://github.com/tcet-opensource/tcet-linux-repo) and [testing package repository](https://github.com/tcet-opensource/tcet-linux-repo-testing) first upload to testing package repository and test the changes if everything works as expected then upload the package to the main this will make the package available to all TCET Linux users.
+We host a [main package repository](https://github.com/tcet-opensource/tcet-linux-repo) and a [testing package repository](https://github.com/tcet-opensource/tcet-linux-repo-testing) first upload to the testing package repository and test the changes if everything works as expected then upload the package to the main this will make the package available to all TCET Linux users.
+
+## Automation for PKGBUILDs
+
+we are currently trying to automate this process by writing a bash script for the steps above :
+
+[TCET Linux Automation scripts](https://github.com/tcet-opensource/tcet-linux-automation-scripts)
+
+## Important Links
+
+[TCET Linux Testing Package Repository](https://github.com/tcet-opensource/tcet-linux-repo-testing)
+
+[TCET Linux Main Package Repository](https://github.com/tcet-opensource/tcet-linux-repo)
