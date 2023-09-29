@@ -2,7 +2,7 @@
 # Project: TCET Linux
 pkgname=tcet-linux-neofetch
 _pkgname=neofetch
-pkgver=23.08
+pkgver=23.09
 pkgrel=1
 pkgdesc="A CLI system information tool written in BASH that supports displaying images."
 arch=('x86_64')
@@ -10,7 +10,7 @@ url="https://github.com/tcet-opensource/tcet-linux-neofetch"
 license=('MIT')
 provides=($_pkgname)
 conflicts=($_pkgname)
-depends=('bash')
+depends=('bash' 'tcet-linux-lsb-release')
 makedepends=('git')
 source=("$pkgname::git+https://github.com/tcet-opensource/tcet-linux-neofetch.git")
 md5sums=('SKIP')
