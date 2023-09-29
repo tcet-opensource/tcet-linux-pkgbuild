@@ -1,0 +1,25 @@
+# Maintainer: Akash6222
+# Project: TCET Linux
+
+pkgname=tcet-linux-lsb-release
+pkgver=23.09
+pkgrel=1
+pkgdesc="Wallpaper for TCET Linux"
+arch=('x86_64')
+url="https://github.com/tcet-opensource/tcet-linux-lsb_release"
+license=('GPL3')
+
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+${url}")
+sha256sums=('SKIP')
+
+destname="/etc/"
+
+package() {
+
+    install -dm755 ${pkgdir}${destname}/
+    cp -r ${srcdir}/${pkgname}/lsb-release ${pkgdir}/${destname}/
+
+}
