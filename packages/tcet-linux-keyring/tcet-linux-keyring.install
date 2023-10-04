@@ -1,9 +1,9 @@
 post_upgrade() {
 	if usr/bin/pacman-key -l >/dev/null 2>&1; then
-		usr/bin/pacman-key --populate tcetlinux
+		usr/bin/pacman-key --populate tcet-linux
 	else
 		echo " >>> Run \`pacman-key --init\` to set up your pacman keyring."
-		echo " >>> Then run \`pacman-key --populate tcetlinux\` to install the TCET Linux keyring."
+		echo " >>> Then run \`pacman-key --populate tcet-linux\` to install the TCET Linux keyring."
 	fi
 }
 
