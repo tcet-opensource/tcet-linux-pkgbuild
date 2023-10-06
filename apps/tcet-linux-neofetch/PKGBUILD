@@ -1,5 +1,6 @@
 # Maintainer: Akash6222
 # Project: TCET Linux
+
 pkgname=tcet-linux-neofetch
 _pkgname=neofetch
 pkgver=23.09

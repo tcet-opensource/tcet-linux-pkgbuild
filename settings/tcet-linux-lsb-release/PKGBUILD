@@ -4,7 +4,7 @@
 pkgname=tcet-linux-lsb-release
 pkgver=23.09
 pkgrel=1
-pkgdesc="Wallpaper for TCET Linux"
+pkgdesc="lsb-release for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-lsb_release"
 license=('GPL3')
