@@ -21,10 +21,10 @@ optdepends=('paru: an AUR helper'
 conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=(${pkgname}::"git+${url}")
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
 sha256sums=('SKIP')
 
 package() {
 	install -dm755 ${pkgdir}${destname}
-	cp -r ${srcdir}/${pkgname}${destname}/* ${pkgdir}${destname}
+	cp -r ${srcdir}/${destname}/* ${pkgdir}${destname}
 }
