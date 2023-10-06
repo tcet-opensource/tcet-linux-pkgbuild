@@ -1,0 +1,50 @@
+name: Update
+
+on:
+  push:
+    branches: main
+  workflow_dispatch:
+
+jobs:
+  updating:
+    runs-on: ubuntu-latest
+
+    container:
+        image: archlinux:latest
+        options: --privileged
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Installing dependencies
+        run: pacman -Syu base-devel git github-cli pacman-contrib sudo fakeroot --noconfirm --needed
+      - name: Cloning repo
+        run: git clone https://github.com/harshau007/tcet-linux-pkgbuild.git
+      - name: Downloading Script
+        run: curl https://raw.githubusercontent.com/harshau007/automation-scripts/main/updsum.sh -o updsum.sh
+      - name: Making exectuable
+        run: |
+            ls -al
+            chmod -R 777 .
+            chmod +777 updsum.sh
+            ls -al
+      - name: Creating new User
+        run: |
+            useradd non_root && mkdir /home/non_root && chown -R non_root:non_root /home/non_root
+            echo 'non_root ALL=NOPASSWD: ALL' >> /etc/sudoers
+            ls -al
+      - name: Updating Shasum
+        run: sudo -u non_root ./updsum.sh
+      - name: Removing Script
+        run: rm -rf updsum.sh
+      - name: create pull request
+        run: |
+          cd tcet-linux-pkgbuild/
+          git config --global user.name "Github Action[Bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git commit -am "Updated Shasum"
+          git push -u origin main
