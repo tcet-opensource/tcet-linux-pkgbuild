@@ -15,11 +15,10 @@ optdepends=(
 )
 provides=('qogir-gtk-theme')
 conflicts=('qogir-gtk-theme')
-source=('git+https://github.com/tcet-opensource/tcet-linux-qogir-theme.git')
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
 sha256sums=('SKIP')
 
 package() {
-  cd tcet-linux-qogir-theme
 
   install -dm755 "${pkgdir}/usr/share/themes"
   
