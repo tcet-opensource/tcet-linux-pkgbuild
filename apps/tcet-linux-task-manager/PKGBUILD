@@ -12,7 +12,7 @@ license=('GPL3')
 conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=(${pkgname}::"git+${url}")
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
 sha256sums=('SKIP')
 destname="/usr/share/applications/"
 destname1="/usr/share/icons/"
@@ -20,13 +20,13 @@ destname2="/usr/bin"
 
 package() {
 
-    install -dm755 ${pkgdir}${destname}/
-    cp -r ${srcdir}/${pkgname}/applications/task-manager.desktop ${pkgdir}${destname}/
-    
-    install -dm755 ${pkgdir}${destname1}/
-    cp -r ${srcdir}/${pkgname}/icons/task-manager.svg ${pkgdir}${destname1}/
+	install -dm755 ${pkgdir}${destname}/
+	cp -r ${srcdir}/applications/task-manager.desktop ${pkgdir}${destname}/
 
-    install -dm755 ${pkgdir}${destname2}/
-    cp -r ${srcdir}/${pkgname}/${destname2}/task-manager ${pkgdir}${destname2}/
+	install -dm755 ${pkgdir}${destname1}/
+	cp -r ${srcdir}/icons/task-manager.svg ${pkgdir}${destname1}/
+
+	install -dm755 ${pkgdir}${destname2}/
+	cp -r ${srcdir}/${destname2}/task-manager ${pkgdir}${destname2}/
 
 }
