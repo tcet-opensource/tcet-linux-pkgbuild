@@ -9,7 +9,7 @@ arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-keyring"
 license=('GPL3')
 install="${pkgname}.install"
-source=(${pkgname}::"git+${url}")
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
 sha256sums=('SKIP')
 validpgpkeys=( '83F70FE14CBD56A2AA8E8837280178FA27665D44'   # Akash6222
                '86D63A086746385BAE60E505421FFABA41F36DA5'   # rishabh672003
@@ -19,7 +19,7 @@ validpgpkeys=( '83F70FE14CBD56A2AA8E8837280178FA27665D44'   # Akash6222
 
 
 package() {
-  cd tcet-linux-keyring/
+  # cd tcet-linux-keyring/
 
   make PREFIX='/usr' DESTDIR="${pkgdir}" install
 }
