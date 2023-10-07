@@ -7,14 +7,14 @@ pkgver=23.08
 pkgrel=2
 pkgdesc="Calamares config for TCET Linux"
 arch=('x86_64')
-url="https://github.com/tcet-opensource"
+url="https://github.com/tcet-opensource/$pkgname"
 license=('GPL3')
 makedepends=('git')
 depends=()
 conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=(${pkgname}::"git+${url}/${pkgname}")
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
 sha256sums=('SKIP')
 package() {
 	install -dm755 ${pkgdir}${destname}
