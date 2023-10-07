@@ -1,8 +1,9 @@
 # Maintainer: Akash6222
 # Project: TCET Linux
 
-pkgname=tcet-linux-tk
-pkgver=8.6.13
+pkgname=tk
+pkgname1=tcet-linux-tk
+pkgver=23.09
 pkgrel=2
 pkgdesc="A windowing toolkit for use with tcl"
 arch=('x86_64')
@@ -10,22 +11,22 @@ url="https://github.com/tcet-opensource/tcet-linux-tk"
 license=('custom')
 depends=('tcl' 'libxss' 'libxft')
 options=('staticlibs')
-source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
+source=("$pkgname1".tar.gz::"${url}"/releases/download/latest/"${pkgname1}".tar.gz)
 sha256sums=('87bc1dc4aa772260ae8e1083835c4c12809a4c23ec67e9c93fad64ce9c8a830d')
 
 build() {
-  cd $pkgname/unix
+  cd $pkgname1/unix
   ./configure --prefix=/usr --mandir=/usr/share/man --enable-threads --disable-rpath --enable-64bit
   make
 }
 
 check() {
-  cd $pkgname/unix
+  cd $pkgname1/unix
 #  make test
 }
 
 package() {
-  cd $pkgname/unix
+  cd $pkgname1/unix
   make INSTALL_ROOT="${pkgdir}" install install-private-headers
   ln -sf wish${pkgver%.*} "${pkgdir}/usr/bin/wish"
   ln -sf libtk${pkgver%.*}.so "${pkgdir}/usr/lib/libtk.so"
