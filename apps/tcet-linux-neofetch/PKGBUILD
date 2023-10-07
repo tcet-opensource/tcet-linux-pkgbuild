@@ -1,5 +1,6 @@
 # Maintainer: Akash6222
 # Project: TCET Linux
+
 pkgname=tcet-linux-neofetch
 _pkgname=neofetch
 pkgver=23.09
@@ -10,9 +11,9 @@ url="https://github.com/tcet-opensource/tcet-linux-neofetch"
 license=('MIT')
 provides=($_pkgname)
 conflicts=($_pkgname)
-depends=('bash' 'tcet-linux-lsb-release')
+depends=('bash' )
 makedepends=('git')
-source=("$pkgname::git+https://github.com/tcet-opensource/tcet-linux-neofetch.git")
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
 md5sums=('SKIP')
 
 package() {
