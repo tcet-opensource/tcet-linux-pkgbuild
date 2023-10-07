@@ -13,7 +13,7 @@ conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('SKIP')
+sha256sums=('5afaa74fcff1303a0d62e3142e1dba4156d7eb0e40b07ac04534704b5849882c')
 
 destname="/usr/share/backgrounds/xfce/"
 
