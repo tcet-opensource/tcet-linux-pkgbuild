@@ -12,7 +12,7 @@ license=('GPL3')
 conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=(${pkgname}::"git+${url}")
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
 sha256sums=('SKIP')
 
 destname="/usr/share/backgrounds/xfce/"
