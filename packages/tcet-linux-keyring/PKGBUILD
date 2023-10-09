@@ -2,8 +2,8 @@
 # Project: TCET Linux
 
 pkgname=tcet-linux-keyring
-pkgver=23.09
-pkgrel=2
+pkgver=23.10
+pkgrel=3
 pkgdesc="Keyring for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-keyring"
@@ -13,7 +13,7 @@ source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz
 sha256sums=('3eef41b8365a16bff6a5497bc06d2de58871344859a7849dc40306188ed3d071')
 validpgpkeys=( '83F70FE14CBD56A2AA8E8837280178FA27665D44'   # Akash6222
                '86D63A086746385BAE60E505421FFABA41F36DA5'   # rishabh672003
-               '6BE6C38C049359429C7BBB86CD7A9DAA70770791'   # 0xAtharv
+               '8DDC56DDE03EE33E8B04E1E802F660CD5FA77EBB'   # 0xAtharv
                '68EC6A9935178174D40EA476BF4E1E687DD0A534'   # harshau007
               )
 
