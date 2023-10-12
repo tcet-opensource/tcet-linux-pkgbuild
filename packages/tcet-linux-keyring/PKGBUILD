@@ -3,7 +3,7 @@
 
 pkgname=tcet-linux-keyring
 pkgver=23.10
-pkgrel=3
+pkgrel=4
 pkgdesc="Keyring for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-keyring"
