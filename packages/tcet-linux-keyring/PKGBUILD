@@ -21,6 +21,6 @@ validpgpkeys=( '83F70FE14CBD56A2AA8E8837280178FA27665D44'   # Akash6222
 package() {
   cd tcet-linux-keyring/
 
-  make PREFIX='/usr' DESTDIR="${pkgdir}" install
+  make DESTDIR="${pkgdir}" install
 }
 
