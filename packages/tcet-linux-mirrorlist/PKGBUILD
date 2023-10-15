@@ -12,10 +12,10 @@ conflicts=()
 provides=("${pkgname}")
 backup=(etc/pacman.d/tcet-linux-mirrorlist)
 options=(!strip !emptydirs)
-source=(${pkgname}::"git+${url}")
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
 sha256sums=('SKIP')
 
 package() {
 	mkdir -p "$pkgdir/etc/pacman.d"
-	install -m644 "$srcdir/$pkgname/mirrorlist" "$pkgdir/etc/pacman.d/tcet-linux-mirrorlist"
+	install -m644 "$srcdir/$pkgname/tcet-linux-mirrorlist" "$pkgdir/etc/pacman.d/tcet-linux-mirrorlist"
 }
