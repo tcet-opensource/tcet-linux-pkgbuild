@@ -3,21 +3,21 @@
 
 pkgname=tcet-linux-settings
 destname="/etc"
-pkgver=23.08
-pkgrel=11
+pkgver=23.10
+pkgrel=1
 pkgdesc="Settings for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-settings"
 license=('GPL3')
 makedepends=('git')
 
-depends=('xfce4-terminal' 'thunar' 'firefox' 'xfce4-whiskermenu-plugin' 'tela-circle-icon' 'tcet-linux-qogir-theme' 'tcet-linux-mirrorlist')
+depends=('xfce4-terminal' 'thunar' 'firefox' 'xfce4-whiskermenu-plugin' 'tela-circle-icon' 'tcet-linux-qogir-theme' 'tcet-linux-mirrorlist' 'yay')
 
-optdepends=('paru: an AUR helper'
-            'neofetch: screenfetch utility'
-            'cups: printing support'
-            'system-config-printer: CUPS status applet'
-            'blueman: bluetooth manager')
+optdepends=('yay: an AUR helper'
+	'neofetch: screenfetch utility'
+	'cups: printing support'
+	'system-config-printer: CUPS status applet'
+	'blueman: bluetooth manager')
 conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
