@@ -10,7 +10,6 @@ url="https://github.com/tcet-opensource/tcet-linux-keyring"
 license=('GPL3')
 install="${pkgname}.install"
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-depends=("tcet-linux-mirrorlist")
 sha256sums=('9f2e8f388e608851af7e8bd3efad52a8de48dd88d9d9e79c463bd0962114a902')
 validpgpkeys=('83F70FE14CBD56A2AA8E8837280178FA27665D44' # Akash6222
 	'86D63A086746385BAE60E505421FFABA41F36DA5'              # rishabh672003

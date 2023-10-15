@@ -11,7 +11,7 @@ url="https://github.com/tcet-opensource/tcet-linux-settings"
 license=('GPL3')
 makedepends=('git')
 
-depends=('xfce4-terminal' 'thunar' 'firefox' 'xfce4-whiskermenu-plugin' 'tela-circle-icon' 'tcet-linux-qogir-theme')
+depends=('xfce4-terminal' 'thunar' 'firefox' 'xfce4-whiskermenu-plugin' 'tela-circle-icon' 'tcet-linux-qogir-theme' 'tcet-linux-mirrorlist')
 
 optdepends=('paru: an AUR helper'
             'neofetch: screenfetch utility'
