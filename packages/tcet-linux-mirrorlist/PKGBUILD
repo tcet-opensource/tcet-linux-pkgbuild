@@ -1,0 +1,21 @@
+# Maintainer: Akash6222
+# Project: TCET Linux
+
+pkgname=tcet-linux-mirrorlist
+pkgver=23.10
+pkgrel=1
+pkgdesc="Mirrorlist for TCET-Linux"
+arch=('x86_64')
+url="https://github.com/tcet-opensource/tcet-linux-mirrorlist"
+license=('GPL3')
+conflicts=()
+provides=("${pkgname}")
+backup=(etc/pacman.d/tcet-linux-mirrorlist)
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+${url}")
+sha256sums=('SKIP')
+
+package() {
+	mkdir -p "$pkgdir/etc/pacman.d"
+	install -m644 "$srcdir/$pkgname/mirrorlist" "$pkgdir/etc/pacman.d/tcet-linux-mirrorlist"
+}
