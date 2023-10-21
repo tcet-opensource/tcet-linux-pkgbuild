@@ -13,11 +13,11 @@ conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('22f44d7e146fed3922d0ad832806665754892f96623fd697d17597099284c1a9')
+sha256sums=('SKIP')
 
 destname="/usr/share/backgrounds/xfce/tcet-linux/"
 
 package() {
     install -dm755 ${pkgdir}${destname}/
-    cp -r ${srcdir}/${pkgname}/wallpaper* ${pkgdir}/${destname}/
+    cp -r ${srcdir}/${pkgname}/tcet-linux/* ${pkgdir}/${destname}/
 }
