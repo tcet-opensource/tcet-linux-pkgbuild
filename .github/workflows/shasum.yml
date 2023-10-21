@@ -54,7 +54,10 @@ jobs:
         if: env.has_changes == 'true' 
         run: | 
           cd tcet-linux-pkgbuild/
-          echo "changed_files=$(git status --porcelain)" >> $GITHUB_ENV
+          echo "changed_files<<EOF" >> $GITHUB_ENV
+          git status --porcelain >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+        shell: bash
         
       - name: create pull request
         if: env.changed_files != ''
