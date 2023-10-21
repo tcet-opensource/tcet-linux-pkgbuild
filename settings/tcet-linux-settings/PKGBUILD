@@ -4,7 +4,7 @@
 pkgname=tcet-linux-settings
 destname="/etc"
 pkgver=23.10
-pkgrel=5
+pkgrel=6
 pkgdesc="Settings for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-settings"
@@ -22,7 +22,7 @@ conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('f154710744d6706dbc56fe3d94ecd809ef6226f42641643afea3af8b52ebcb70')
+sha256sums=('SKIP')
 
 package() {
 	install -dm755 ${pkgdir}${destname}
