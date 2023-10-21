@@ -21,7 +21,7 @@ jobs:
       - name: Installing dependencies
         run: pacman -Syu base-devel git github-cli pacman-contrib sudo fakeroot --noconfirm --needed
       - name: Cloning repo
-        run: git clone https://github.com/harshau007/tcet-linux-pkgbuild.git
+        run: git clone https://github.com/tcet-opensource/tcet-linux-pkgbuild.git
       - name: Downloading Script
         run: curl https://raw.githubusercontent.com/tcet-opensource/tcet-linux-automation-scripts/main/updsum.sh -o updsum.sh
       - name: Making exectuable
