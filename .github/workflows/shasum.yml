@@ -39,12 +39,28 @@ jobs:
         run: sudo -u non_root ./updsum.sh
       - name: Removing Script
         run: rm -rf updsum.sh
-      - name: create pull request
+      - name: Setup git
         run: |
-          cd tcet-linux-pkgbuild/
           git config --global user.name "Github Action[Bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Check changes
+        id: git_diff
+        run: |
+          cd tcet-linux-pkgbuild/
+          git diff-index --quiet HEAD -- || echo "has_changes=true" >> $GITHUB_ENV
+      
+      - name: Check changed files
+        id: git_status
+        if: env.has_changes == 'true' 
+        run: | 
+          cd tcet-linux-pkgbuild/
+          echo "changed_files=$(git status --porcelain)" >> $GITHUB_ENV
+        
+      - name: create pull request
+        if: env.changed_files != ''
+        run: |
+          cd tcet-linux-pkgbuild/
           git add .
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git commit -am "Updated Shasum"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tcet-opensource/tcet-linux-pkgbuild.git
+          git commit -m "Updating Shasum"
           git push -u origin main
