@@ -13,7 +13,7 @@ conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('SKIP')
+sha256sums=('22f44d7e146fed3922d0ad832806665754892f96623fd697d17597099284c1a9')
 
 destname="/usr/share/backgrounds/xfce/tcet-linux/"
 
