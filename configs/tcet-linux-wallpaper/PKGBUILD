@@ -3,7 +3,7 @@
 
 pkgname=tcet-linux-wallpaper
 pkgver=23.10
-pkgrel=3
+pkgrel=4
 pkgdesc="Wallpaper for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-wallpaper"
@@ -13,7 +13,7 @@ conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('22f44d7e146fed3922d0ad832806665754892f96623fd697d17597099284c1a9')
+sha256sums=('12b7f0fa771e6227f3599828d45d823c2294b0fcb943b416c924df48c2cde88d')
 
 destname="/usr/share/backgrounds/xfce/tcet-linux/"
 
