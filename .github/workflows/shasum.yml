@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-        image: archlinux:latest
-        options: --privileged
+      image: archlinux:latest
+      options: --privileged
 
     permissions:
       contents: write
@@ -24,17 +24,17 @@ jobs:
         run: git clone https://github.com/tcet-opensource/tcet-linux-pkgbuild.git
       - name: Downloading Script
         run: curl https://raw.githubusercontent.com/tcet-opensource/tcet-linux-automation-scripts/main/updsum.sh -o updsum.sh
-      - name: Making exectuable
+      - name: Making executable
         run: |
-            ls -al
-            chmod -R 777 .
-            chmod +777 updsum.sh
-            ls -al
+          ls -al
+          chmod -R 777 .
+          chmod +777 updsum.sh
+          ls -al
       - name: Creating new User
         run: |
-            useradd non_root && mkdir /home/non_root && chown -R non_root:non_root /home/non_root
-            echo 'non_root ALL=NOPASSWD: ALL' >> /etc/sudoers
-            ls -al
+          useradd non_root && mkdir /home/non_root && chown -R non_root:non_root /home/non_root
+          echo 'non_root ALL=NOPASSWD: ALL' >>/etc/sudoers
+          ls -al
       - name: Updating Shasum
         run: sudo -u non_root ./updsum.sh
       - name: Removing Script
@@ -48,17 +48,17 @@ jobs:
         run: |
           cd tcet-linux-pkgbuild/
           git diff-index --quiet HEAD -- || echo "has_changes=true" >> $GITHUB_ENV
-      
+
       - name: Check changed files
         id: git_status
-        if: env.has_changes == 'true' 
-        run: | 
+        if: env.has_changes == 'true'
+        run: |
           cd tcet-linux-pkgbuild/
-          echo "changed_files<<EOF" >> $GITHUB_ENV
-          git status --porcelain >> $GITHUB_ENV
+          echo "changed_files<<EOF" >>$GITHUB_ENV
+          git status --porcelain >>$GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
         shell: bash
-        
+
       - name: create pull request
         if: env.changed_files != ''
         run: |
@@ -66,4 +66,4 @@ jobs:
           git add .
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tcet-opensource/tcet-linux-pkgbuild.git
           git commit -m "Updating Shasum"
-          git push -u origin main
+          git push --force -u origin main
