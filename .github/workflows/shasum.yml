@@ -59,7 +59,7 @@ jobs:
           echo "EOF" >> $GITHUB_ENV
         shell: bash
 
-      - name: create pull request
+      - name: Pushing to main
         if: env.changed_files != ''
         run: |
           cd tcet-linux-pkgbuild/
