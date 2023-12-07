@@ -24,8 +24,8 @@ source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz
 sha256sums=('60b68957eeeab34a49f2930d6ec88eb64573f1a3b63b46742a3906d31a7966bf')
 
 package() {
-	install -dm755 ${pkgdir}${destname}/
-	cp -r ${srcdir}/${pkgname}${repodest}/* ${pkgdir}${destname}/
+		install -dm755 ${pkgdir}${destname}/
+		cp -r ${srcdir}/${pkgname}${repodest}/* ${pkgdir}${destname}/
 
     install -dm755 ${pkgdir}${app}/
     cp -r ${srcdir}/${pkgname}/tcet-welcome.desktop ${pkgdir}${app}/
@@ -35,8 +35,5 @@ package() {
    
     install -dm755 ${pkgdir}${binary}/
     cp -r ${srcdir}/${pkgname}/welcome ${pkgdir}${binary}/
-
-    install -dm755 ${pkgdir}${binary}/
-    cp -r ${srcdir}/${pkgname}/welcome-after ${pkgdir}${binary}/
 
 }
