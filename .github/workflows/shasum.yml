@@ -66,4 +66,4 @@ jobs:
           git add .
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tcet-opensource/tcet-linux-pkgbuild.git
           git commit -m "Updating Shasum"
-          git push --force -u origin main
+          git push -u origin main --force
