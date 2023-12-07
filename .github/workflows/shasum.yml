@@ -57,6 +57,7 @@ jobs:
           echo "changed_files<<EOF" >>$GITHUB_ENV
           git status --porcelain >>$GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
+          echo env.changed_files != ''
         shell: bash
 
       - name: Pushing to main
