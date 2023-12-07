@@ -36,4 +36,7 @@ package() {
     install -dm755 ${pkgdir}${binary}/
     cp -r ${srcdir}/${pkgname}/welcome ${pkgdir}${binary}/
 
+		install -dm755 ${pkgdir}${binary}/
+    cp -r ${srcdir}/${pkgname}/welcome-after ${pkgdir}${binary}/
+
 }
