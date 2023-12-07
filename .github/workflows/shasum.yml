@@ -41,7 +41,7 @@ jobs:
         run: rm -rf updsum.sh
       - name: Setup git
         run: |
-          git config --global user.name "Github Action[bot]"
+          git config --global user.name "GithubActionBot"
           git config --global user.email "gh.action.bot@gmail.com"
       - name: Check changes
         id: git_diff
