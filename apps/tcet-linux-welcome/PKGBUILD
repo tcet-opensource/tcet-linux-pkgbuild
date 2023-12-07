@@ -2,7 +2,7 @@
 # Project: TCET Linux
 
 pkgname=tcet-linux-welcome
-destname="/usr/local/share/tcet-welcome"
+destname="/etc/skel/.local/share/tcet-welcome"
 app="/usr/share/applications"
 repodest="/tcet-welcome"
 autostart="/etc/skel/.config/autostart"
