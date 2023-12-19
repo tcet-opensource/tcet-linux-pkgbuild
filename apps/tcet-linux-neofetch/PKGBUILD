@@ -14,7 +14,7 @@ conflicts=($_pkgname)
 depends=('bash' 'tcet-linux-lsb-release')
 makedepends=('git')
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-md5sums=('8754134280a85a55581ad5956f5b13f1')
+md5sums=('SKIP')
 
 package() {
   cd $pkgname
