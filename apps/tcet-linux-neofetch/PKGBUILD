@@ -4,7 +4,7 @@
 pkgname=tcet-linux-neofetch
 _pkgname=neofetch
 pkgver=23.12
-pkgrel=1
+pkgrel=2
 pkgdesc="A CLI system information tool written in BASH that supports displaying images."
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-neofetch"
