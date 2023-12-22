@@ -13,7 +13,7 @@ conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('e827a4dd8c2e2bc0e12d6e21270084acce00040d009e4b057480c25ee6204478')
+sha256sums=('eaf0ede976d45235337f00679ec0b3aa588a0bf22efca6deab6d981a92c150a5')
 
 package() {
 
