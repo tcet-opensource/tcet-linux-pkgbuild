@@ -12,7 +12,7 @@ license=('custom')
 depends=('tcl' 'libxss' 'libxft')
 options=('staticlibs')
 source=("$pkgname1".tar.gz::"${url}"/releases/download/latest/"${pkgname1}".tar.gz)
-sha256sums=('1565db51cf82f44bb223a7f674277fc443bcc9379ac14e04e814b6ff0c1c0426')
+sha256sums=('19aa9cb3d578795458a0c493b4c9706839540e7c6a404ffb48b8eaa826cbbde5')
 
 build() {
   cd $pkgname1/unix

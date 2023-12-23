@@ -13,7 +13,7 @@ provides=("${pkgname}")
 backup=(etc/pacman.d/tcet-linux-mirrorlist)
 options=(!strip !emptydirs)
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('9440232116203428385d93ece195a015dfe452878cc9c153fb1312f99a88aadc')
+sha256sums=('ef29e6d36e8741c3fcd62bd05c31c2434147a1e212221bc6c842b2972a6dce00')
 
 package() {
 	mkdir -p "$pkgdir/etc/pacman.d"
