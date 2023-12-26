@@ -2,7 +2,7 @@
 # Project: TCET Linux
 
 pkgname=tcet-linux-qogir-theme
-pkgver=2023.05.24
+pkgver=23.12
 pkgrel=1
 pkgdesc='Qogir Theme for TCET Linux'
 arch=('x86_64')
