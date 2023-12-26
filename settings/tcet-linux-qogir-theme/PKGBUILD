@@ -16,7 +16,7 @@ optdepends=(
 provides=('qogir-gtk-theme')
 conflicts=('qogir-gtk-theme')
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('4d2e330828be7d964f59fe204d09a8cc0e7a69cfcd562a2c5cb91f47fb9d274c')
+sha256sums=('e87ac448a8c417799177dc49a6be2dfc2f795b119ec87c107c5507e415f2003f')
 
 package() {
   cd tcet-linux-qogir-theme
