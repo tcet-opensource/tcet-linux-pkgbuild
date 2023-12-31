@@ -15,7 +15,7 @@ conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('406fa5bfce776c699bdeb98230ef793d8fa72e653844f4d5b1db5b0c318b6b0b')
+sha256sums=('035d34d2cc5709978f6e5539722cc4f9712662a700242c91fc61ee62365e717b')
 package() {
 	install -dm755 ${pkgdir}${destname}
 	cp -r ${srcdir}/${pkgname}${destname}/* ${pkgdir}${destname}
