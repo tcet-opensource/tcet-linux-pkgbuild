@@ -2,7 +2,7 @@
 # Project: TCET Linux
 
 pkgname=tcet-linux-multilang-compiler
-pkgver=23.12
+pkgver=24.01
 pkgrel=1
 pkgdesc="Script to build and run multiple programming languages."
 arch=('x86_64')
