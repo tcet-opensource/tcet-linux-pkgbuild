@@ -21,7 +21,7 @@ conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('2936bde5cfd82fee70b4de6070d62da229f2b6e41bbeec3771bb6e782346cebb')
+sha256sums=('a2deea3c6fe0cf6a46cf272d946c9bada3715f5373b1d0277b256d0696b25903')
 
 prepare() {
     # Run your script before the build starts
