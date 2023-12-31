@@ -1,0 +1,21 @@
+# Maintainer: Akash6222
+# Project: TCET Linux
+
+pkgname=tcet-linux-multilang-compiler
+pkgver=23.12
+pkgrel=1
+pkgdesc="Script to build and run multiple programming languages."
+arch=('x86_64')
+url="https://github.com/tcet-opensource/tcet-linux-multilang-compiler"
+license=('MIT')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+makedepends=('git')
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
+sha256sums=('9fd8c3fd69123e4f8e592d7cdeb5df97b2e928a16f999a2882d196468c932836')
+
+package() {
+	install -dm755 ${pkgdir}${destname}/
+	cp -r ${srcdir}/${pkgname}/* ${pkgdir}${destname}/
+}
