@@ -15,7 +15,12 @@ makedepends=('git')
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
 sha256sums=('9fd8c3fd69123e4f8e592d7cdeb5df97b2e928a16f999a2882d196468c932836')
 
+prepare() {
+    # removing unwanted Script
+		rm ${srcdir}/${pkgname}/update_config.sh
+   }
+
 package() {
-	install -dm755 ${pkgdir}${destname}/
-	cp -r ${srcdir}/${pkgname}/* ${pkgdir}${destname}/
+	install -dm755 ${pkgdir}/
+	cp -r ${srcdir}/${pkgname}/* ${pkgdir}/
 }
