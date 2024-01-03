@@ -3,8 +3,8 @@
 
 pkgname=tcet-linux-settings
 destname="/etc"
-pkgver=23.12
-pkgrel=3
+pkgver=24.01
+pkgrel=1
 pkgdesc="Settings for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-settings"
