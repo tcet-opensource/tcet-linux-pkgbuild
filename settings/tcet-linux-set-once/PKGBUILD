@@ -2,7 +2,7 @@
 # Project: TCET Linux
 
 pkgname=tcet-linux-set-once
-pkgver=23.08
+pkgver=24.01
 pkgrel=1
 pkgdesc="Set Once for TCET Linux"
 arch=('x86_64')
