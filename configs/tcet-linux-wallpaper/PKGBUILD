@@ -2,7 +2,7 @@
 # Project: TCET Linux
 
 pkgname=tcet-linux-wallpaper
-pkgver=23.12
+pkgver=24.01
 pkgrel=1
 pkgdesc="Wallpaper for TCET Linux"
 arch=('x86_64')
