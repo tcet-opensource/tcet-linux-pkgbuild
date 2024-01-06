@@ -15,9 +15,14 @@ depends=('bash' 'tcet-linux-lsb-release')
 makedepends=('git')
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
 md5sums=('09d77fdba6a3fbfea1756a70aab8cff5')
+config='/etc/skel/.config/neofetch/'
 
 package() {
   cd $pkgname
   make DESTDIR="$pkgdir" install
   install -D -m644 LICENSE.md "$pkgdir/usr/share/licenses/neofetch/LICENSE.md"
+
+  install -dm755 ${pkgdir}${config}/
+  cp -r ${srcdir}/${pkgname}/config.conf ${pkgdir}${config}/
+
 }
