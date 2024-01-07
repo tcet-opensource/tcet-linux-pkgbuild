@@ -14,7 +14,7 @@ conflicts=($_pkgname)
 depends=('bash' 'tcet-linux-lsb-release')
 makedepends=('git')
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-md5sums=('09d77fdba6a3fbfea1756a70aab8cff5')
+md5sums=('3a36940e06d9e3756d1b1192bd622d4f')
 config='/etc/skel/.config/neofetch/'
 
 package() {
