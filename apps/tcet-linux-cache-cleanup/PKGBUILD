@@ -1,0 +1,27 @@
+# Maintainer: Akash6222
+# Project: TCET Linux
+
+pkgname=tcet-linux-cache-cleanup
+pkgver=24.01
+pkgrel=1
+pkgdesc="Script to cleanup TCET-Linux"
+arch=('x86_64')
+url="https://github.com/tcet-opensource/tcet-linux-cache-cleanup"
+license=('GPL3')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+makedepends=('git')
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
+sha256sums=('89cf04124bfa2d63ddf765ba4319901c7e90c428f668d138cdbdacb9ecf8bb94')
+
+prepare() {
+    # removing unwanted Script
+		rm ${srcdir}/${pkgname}/README.md
+		rm ${srcdir}/${pkgname}/LICENSE
+   }
+
+package() {
+	install -dm755 ${pkgdir}/
+	cp -r ${srcdir}/${pkgname}/* ${pkgdir}/
+}
