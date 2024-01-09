@@ -13,7 +13,7 @@ conflicts=($pkgname)
 depends=()
 makedepends=('git')
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('89cf04124bfa2d63ddf765ba4319901c7e90c428f668d138cdbdacb9ecf8bb94')
+sha256sums=('6d9148c2c58b3b35ab11bfdec4a6778438ce2bc31d0117aa745624b7d84b9b32')
 
 prepare() {
     # removing unwanted Script
