@@ -1,19 +1,19 @@
 # Maintainer: Akash6222
 # Project: TCET Linux
 
-pkgname=tcet-linux-multilang-compiler
+pkgname=tcet-linux-code-runner
 pkgver=24.01
 pkgrel=1
 pkgdesc="Script to build and run multiple programming languages."
 arch=('x86_64')
-url="https://github.com/tcet-opensource/tcet-linux-multilang-compiler"
-license=('MIT')
+url="https://github.com/tcet-opensource/tcet-linux-code-runner"
+license=('')
 provides=($pkgname)
 conflicts=($pkgname)
 depends=()
 makedepends=('git')
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('9fd8c3fd69123e4f8e592d7cdeb5df97b2e928a16f999a2882d196468c932836')
+sha256sums=('SKIP')
 
 prepare() {
     # removing unwanted Script
