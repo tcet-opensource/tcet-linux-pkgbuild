@@ -1,0 +1,23 @@
+# Maintainer: Akash6222
+# Project: TCET Linux
+
+pkgname=tcet-linux-gnome-wallpaper
+pkgver=24.01
+pkgrel=1
+pkgdesc="Wallpaper for TCET Linux Gnome Edition"
+arch=('x86_64')
+url="https://github.com/tcet-opensource/tcet-linux-wallpaper"
+license=('GPL3')
+
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
+sha256sums=('6c9da24840921193ca6f1274252045c8d951442a2e1bcbae366f6fcd2f3a8cdc')
+
+destname="/usr/share/backgrounds/gnome/"
+
+package() {
+    install -dm755 ${pkgdir}${destname}/
+    cp -r ${srcdir}/${pkgname}/tcet-linux/* ${pkgdir}/${destname}/
+}
