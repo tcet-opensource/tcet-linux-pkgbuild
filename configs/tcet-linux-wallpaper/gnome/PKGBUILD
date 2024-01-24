@@ -2,6 +2,7 @@
 # Project: TCET Linux
 
 pkgname=tcet-linux-gnome-wallpaper
+pkgname1=tcet-linux-wallpaper
 pkgver=24.01
 pkgrel=1
 pkgdesc="Wallpaper for TCET Linux Gnome Edition"
@@ -12,12 +13,12 @@ license=('GPL3')
 conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname1}".tar.gz)
 sha256sums=('6c9da24840921193ca6f1274252045c8d951442a2e1bcbae366f6fcd2f3a8cdc')
 
 destname="/usr/share/backgrounds/gnome/"
 
 package() {
     install -dm755 ${pkgdir}${destname}/
-    cp -r ${srcdir}/${pkgname}/tcet-linux/* ${pkgdir}/${destname}/
+    cp -r ${srcdir}/${pkgname1}/tcet-linux/* ${pkgdir}/${destname}/
 }
