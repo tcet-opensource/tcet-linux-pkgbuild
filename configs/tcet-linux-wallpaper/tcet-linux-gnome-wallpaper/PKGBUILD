@@ -16,7 +16,7 @@ options=(!strip !emptydirs)
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname1}".tar.gz)
 sha256sums=('6c9da24840921193ca6f1274252045c8d951442a2e1bcbae366f6fcd2f3a8cdc')
 
-destname="/usr/share/backgrounds/gnome/"
+destname="/usr/share/backgrounds/gnome/tcet-linux"
 
 package() {
     install -dm755 ${pkgdir}${destname}/
