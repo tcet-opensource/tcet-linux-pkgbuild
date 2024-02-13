@@ -13,7 +13,7 @@ conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
-sha256sums=('SKIP')
+sha256sums=('c7964e140e3c075c85632ac2742e99c5ae53c2bfe9b111959ff8e695104db49c')
 
 prepare(){
     	rm ${srcdir}/${pkgname}/README.md
