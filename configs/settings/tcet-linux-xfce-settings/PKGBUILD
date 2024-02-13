@@ -1,13 +1,13 @@
 # Maintainer: Akash6222
 # Project: TCET Linux
 
-pkgname=tcet-linux-settings
+pkgname=tcet-linux-xfce-settings
 destname="/etc"
 pkgver=24.01
 pkgrel=3
 pkgdesc="Settings for TCET Linux"
 arch=('x86_64')
-url="https://github.com/tcet-opensource/tcet-linux-settings"
+url="https://github.com/tcet-opensource/tcet-linux-xfce-settings"
 license=('GPL3')
 makedepends=('git')
 

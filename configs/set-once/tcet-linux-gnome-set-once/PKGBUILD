@@ -1,0 +1,27 @@
+# Maintainer: Akash6222
+# Project: TCET Linux
+
+pkgname=tcet-linux-gnome-set-once
+pkgver=24.01
+pkgrel=1
+pkgdesc="Set Once for TCET Linux Gnome Edition"
+arch=('x86_64')
+url="https://github.com/tcet-opensource/tcet-linux-gnome-set-once"
+license=('GPL3')
+
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
+sha256sums=('bf43daac4a7e49e7c1e24aeabdfa493fa5d93b59d4158e73e9a34cd7ef9e2a4e')
+
+prepare(){
+    	rm ${srcdir}/${pkgname}/README.md
+}
+
+package() {
+
+    install -dm755 ${pkgdir}/
+    cp -r ${srcdir}/${pkgname}/* ${pkgdir}/
+
+}

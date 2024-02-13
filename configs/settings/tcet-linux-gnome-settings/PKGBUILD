@@ -1,0 +1,30 @@
+# Maintainer: Akash6222
+# Project: TCET Linux
+
+pkgname=tcet-linux-gnome-settings
+destname="/etc"
+pkgver=24.01
+pkgrel=3
+pkgdesc="Settings for TCET Linux"
+arch=('x86_64')
+url="https://github.com/tcet-opensource/tcet-linux-gnome-settings"
+license=('GPL3')
+makedepends=('git')
+
+depends=('firefox' 'tela-circle-icon' 'tcet-linux-qogir-theme' 'tcet-linux-mirrorlist' 'yay')
+
+optdepends=('yay: an AUR helper'
+	'neofetch: screenfetch utility'
+	'cups: printing support'
+	'system-config-printer: CUPS status applet'
+	'blueman: bluetooth manager')
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname}".tar.gz)
+sha256sums=('3130081c2582c22965d3100df4ffce6ae19c6976c8388c8f762e3a653ef58165')
+
+package() {
+	install -dm755 ${pkgdir}${destname}
+	cp -r ${srcdir}/${pkgname}${destname}/* ${pkgdir}${destname}
+}
