@@ -3,8 +3,8 @@
 
 pkgname=calamares-desktop
 destname="/etc/skel/Desktop/"
-pkgver=23.08
-pkgrel=3
+pkgver=24.02
+pkgrel=1
 pkgdesc="Calamares Desktop for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/calamares-desktop"
