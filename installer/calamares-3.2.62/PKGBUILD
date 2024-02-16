@@ -13,7 +13,7 @@ makedepends=('git')
 conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname1}".tar.gz)
+source=("$pkgname1".tar.gz::"${url}"/releases/download/latest/"${pkgname1}".tar.gz)
 sha256sums=('dd7b46a2d4e1baad0f98ac391b26f42b6452d7c4bf6ec2047fec35ef7e01e8f7')
 
 package() {
