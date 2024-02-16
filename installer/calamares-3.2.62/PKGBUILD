@@ -2,67 +2,23 @@
 
 pkgname=calamares
 pkgver=3.2.62
-pkgrel=11
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
-license=(GPL)
-url="https://github.com/calamares/calamares/releases/download"
-license=('LGPL')
-depends=('kconfig5' 'kcoreaddons5' 'kiconthemes5' 'ki18n5' 'kio5' 'solid5' 'yaml-cpp' 'kpmcore' 'mkinitcpio-openswap'
-         'boost-libs' 'ckbcomp' 'hwinfo' 'qt5-svg' 'polkit-qt5' 'gtk-update-icon-cache' 'plasma-framework5'
-         'qt5-xmlpatterns' 'squashfs-tools' 'libpwquality' 'boost') # 'pythonqt>=3.2')
-makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations' 'git' 'boost')
-backup=('usr/share/calamares/modules/bootloader.conf'
-        'usr/share/calamares/modules/displaymanager.conf'
-        'usr/share/calamares/modules/initcpio.conf'
-        'usr/share/calamares/modules/unpackfs.conf')
+pkgname1=calamares-desktop
+destname="/etc/skel/Desktop/"
+url="https://github.com/tcet-opensource/calamares-desktop"
+license=('GPL3')
+makedepends=('git')
 
-source=("$pkgname-$pkgver-$pkgrel.tar.gz::$url/v$pkgver/calamares-$pkgver.tar.gz")
-sha256sums=('a0fbcec2a438693753fc174220356119ad7adb8a2b19c317518aa1cb025d6dd0')
-
-prepare() {
-	cd ${srcdir}/calamares-${pkgver}
-	sed -i -e 's/"Install configuration files" OFF/"Install configuration files" ON/' CMakeLists.txt
-	sed -i -e 's/# DEBUG_FILESYSTEMS/DEBUG_FILESYSTEMS/' "$srcdir/${pkgname}-${pkgver}/CMakeLists.txt"
-
-	# modify desktop file
-	sed -i -e 's#Exec=sh.*#Exec=sh -c "sudo -E calamares -D 8"#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
-	sed -i -e 's#Name=.*#Name=Install TCET Linux#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
-	sed -i -e 's#GenericName=.*#GenericName=TCET Linux Installer#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
-	sed -i -e 's#Icon=.*#Icon=tcetlinux-logo#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
-	sed -i -e 's#Comment=.*#Comment=TCET Linux Installer#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
-
-
-	# patches here
-
-	# change version
-	_ver="$(cat CMakeLists.txt | grep -m3 -e "  VERSION" | grep -o "[[:digit:]]*" | xargs | sed s'/ /./g')"
-	printf 'Version: %s-%s' "${_ver}" "${pkgrel}"
-	sed -i -e "s|\${CALAMARES_VERSION_MAJOR}.\${CALAMARES_VERSION_MINOR}.\${CALAMARES_VERSION_PATCH}|${_ver}-${pkgrel}|g" CMakeLists.txt
-	sed -i -e "s|CALAMARES_VERSION_RC 1|CALAMARES_VERSION_RC 0|g" CMakeLists.txt
-
-}
-
-build() {
-	cd ${srcdir}/calamares-${pkgver}
-
-	mkdir -p build
-	cd build
-        cmake .. \
-              -DCMAKE_BUILD_TYPE=Release \
-              -DCMAKE_INSTALL_PREFIX=/usr \
-              -DCMAKE_INSTALL_LIBDIR=lib \
-              -DWITH_PYTHONQT:BOOL=ON \
-              -DBoost_NO_BOOST_CMAKE=ON \
-              -DSKIP_MODULES="tracking webview interactiveterminal initramfs \
-                              initramfscfg dracut dracutlukscfg \
-                              dummyprocess dummypython dummycpp \
-                              dummypythonqt services-openrc"
-        make
-}
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=("$pkgname".tar.gz::"${url}"/releases/download/latest/"${pkgname1}".tar.gz)
+sha256sums=('dd7b46a2d4e1baad0f98ac391b26f42b6452d7c4bf6ec2047fec35ef7e01e8f7')
 
 package() {
-	cd ${srcdir}/calamares-${pkgver}/build
-	make DESTDIR="$pkgdir" install
+
+    install -dm755 ${pkgdir}${destname}/
+    cp -r ${srcdir}/${pkgname1}/calamares.desktop ${pkgdir}${destname}/
 
 }
