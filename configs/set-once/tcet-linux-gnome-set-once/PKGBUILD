@@ -3,7 +3,7 @@
 
 pkgname=tcet-linux-gnome-set-once
 pkgver=24.02
-pkgrel=7
+pkgrel=8
 pkgdesc="Set Once for TCET Linux Gnome Edition"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-gnome-set-once"
