@@ -2,7 +2,7 @@
 # Project: TCET Linux
 
 pkgname=tcet-linux-lsb-release
-pkgver=23.09
+pkgver=24.02
 pkgrel=1
 pkgdesc="lsb-release for TCET Linux"
 arch=('x86_64')
