@@ -4,7 +4,7 @@
 pkgname=tcet-linux-gnome-wallpaper
 pkgname1=tcet-linux-wallpaper
 pkgver=24.02
-pkgrel=2
+pkgrel=3
 pkgdesc="Wallpaper for TCET Linux Gnome Edition"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-wallpaper"
