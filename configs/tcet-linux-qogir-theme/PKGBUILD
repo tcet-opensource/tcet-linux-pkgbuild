@@ -3,7 +3,7 @@
 
 pkgname=tcet-linux-qogir-theme
 pkgver=24.02
-pkgrel=1
+pkgrel=2
 pkgdesc='Qogir Theme for TCET Linux'
 arch=('x86_64')
 url='https://github.com/tcet-opensource/tcet-linux-qogir-theme'

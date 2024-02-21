@@ -3,7 +3,7 @@
 
 pkgname=tcet-linux-lsb-release
 pkgver=24.02
-pkgrel=1
+pkgrel=2
 pkgdesc="lsb-release for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-lsb_release"
