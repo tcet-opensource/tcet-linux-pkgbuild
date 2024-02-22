@@ -4,7 +4,7 @@
 pkgname=tk
 pkgname1=tcet-linux-tk
 pkgver=24.02
-pkgrel=2
+pkgrel=3
 pkgdesc="A windowing toolkit for use with tcl"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-tk"
