@@ -3,7 +3,7 @@
 
 pkgname=tcet-linux-task-manager
 pkgver=24.02
-pkgrel=3
+pkgrel=4
 pkgdesc="Task Manager for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/tcet-linux-task-manager"
