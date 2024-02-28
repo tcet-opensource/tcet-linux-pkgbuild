@@ -4,7 +4,7 @@
 pkgname=tcet-linux-installer-config
 destname="/etc"
 pkgver=24.02
-pkgrel=5
+pkgrel=6
 pkgdesc="Calamares config for TCET Linux"
 arch=('x86_64')
 url="https://github.com/tcet-opensource/$pkgname"
